@@ -118,8 +118,6 @@ int Summarize::readFile() {
   d_buffer = new u_int8_t[d_fileSize];
   assert(d_buffer);
 
-  memset(d_buffer, 0xFF, d_fileSize);
-
   int fid = open(d_fileName.c_str(), O_RDONLY);
   if (fid==-1) {
     assert(errno!=0);

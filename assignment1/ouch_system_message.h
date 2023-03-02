@@ -10,7 +10,10 @@
 // 
 
 #include <ouch_text_sizes.h>
+
 #include <iostream>
+
+#include <string.h>
 #include <sys/types.h>
 
 namespace OUCH {

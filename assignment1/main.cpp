@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include <errno.h>
+#include <string.h>
 #include <unistd.h>
 #include <sys/stat.h>
-#include <errno.h>
+
 #include <ouch_summarize.h>
 
 u_int64_t fileSize;
@@ -25,7 +27,7 @@ void processCommandLine(int argc, char **argv) {
           exit(1);
         }
         if (fs.st_size> 0x40000000) {
-          printf("file '%s' is too large at %llu bytes. Maximum is 1Gb\n", optarg, fs.st_size);
+          printf("file '%s' is too large at %lu bytes. Maximum is 1Gb\n", optarg, fs.st_size);
           exit(1);
         }
         fileSize = fs.st_size;
@@ -45,7 +47,7 @@ void processCommandLine(int argc, char **argv) {
 int main(int argc, char **argv) {
   processCommandLine(argc, argv);
 
-  printf("processing '%s' %llu bytes ...\n", fileName.c_str(), fileSize);
+  printf("processing '%s' %lu bytes ...\n", fileName.c_str(), fileSize);
 
   OUCH::Summarize summary(fileName, fileSize);
   if (0!=summary.process()) {
