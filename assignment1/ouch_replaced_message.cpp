@@ -1,0 +1,30 @@
+#include <ouch_replaced_message.h>
+
+std::ostream& OUCH::ReplacedEventMessage::print(std::ostream& stream) const {
+  stream << "OUCH::ReplacedEventMessage [" << std::endl;
+
+  stream << "  messageLength       : "    << d_messageLength          << std::endl;
+  stream << "  packeType           : '"   << d_packeType << "'"       << std::endl;
+  stream << "  messageType         : '"   << d_messageType << "'"     << std::endl;
+  stream << "  timestamp           : "    << d_timestamp              << std::endl;
+  stream << "  orderToken          : '"   << d_orderToken << "'"      << std::endl;
+  stream << "  side                : '"   << d_side << "'"            << std::endl;
+  stream << "  shares              : "    << d_shares                 << std::endl;
+  stream << "  symbol              : '"   << d_symbol << "'"          << std::endl;
+  stream << "  price               : "    << d_price                  << std::endl;
+  stream << "  timeInForce         : "    << d_timeInForce            << std::endl;
+  stream << "  firm                : '"   << d_firm << "'"            << std::endl;
+  stream << "  display             : '"   << d_display << "'"         << std::endl;
+  stream << "  orderReferenceNumber: "    << d_orderReferenceNumber   << std::endl;
+  stream << "  orderCapacity       : '"   << d_orderCapacity << "'"   << std::endl;
+  stream << "  interMarketSweep    : '"   << d_interMarketSweep << "'"<< std::endl;
+  stream << "  minimumQuantity     : "    << d_minimumQuantity        << std::endl;
+  stream << "  crossType           : '"   << d_crossType << "'"       << std::endl;
+  stream << "  orderState          : '"   << d_orderState << "'"      << std::endl;
+
+  stream << "  previousOrderToken  : '"   << d_previousOrderToken << "'" << std::endl;
+
+  stream << "]" << std::endl;
+
+  return stream;
+}
