@@ -127,6 +127,13 @@ int Summarize::readFile() {
   auto sz = read(fid, d_buffer, d_fileSize);
   close(fid);
 
+  printf("read %lu bytes\n", sz);
+
+  for (unsigned i=0; i<50; ++i) {
+    printf("%02x ", d_buffer[i]);
+  }
+  printf("\n");
+
   return !(static_cast<u_int64_t>(sz)==d_fileSize);
 }
 
